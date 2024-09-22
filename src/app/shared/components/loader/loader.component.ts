@@ -8,9 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './loader.component.css',
 })
 export class LoaderComponent {
-  isLoading = false;
-
-  showLoader(loading: boolean) {
-    this.isLoading = loading;
-  }
+   
 }

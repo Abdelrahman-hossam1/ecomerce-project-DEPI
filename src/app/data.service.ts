@@ -7,12 +7,6 @@ import { Observable } from 'rxjs';
 })
 export class DataService {
 
-  private http = inject(HttpClient);
-
-
   constructor() { }
 
-  fetchData(): Observable<any>{
-    return this.http.get('')
-  }
 }
