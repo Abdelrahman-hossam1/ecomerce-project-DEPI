@@ -1,0 +1,16 @@
+
+/* Change color of next and previous navigation buttons */
+swiper-container::part(next-button),
+swiper-container::part(prev-button) {
+    color: #ff0000; /* Red color for navigation buttons */
+}
+
+/* Change color of pagination bullets */
+swiper-container::part(pagination-bullet) {
+    background-color: #000000; /* Green color for pagination bullets */
+}
+
+/* Change color of active pagination bullet */
+swiper-container::part(pagination-bullet-active) {
+    background-color: #000000; /* Blue color for active bullet */
+}
