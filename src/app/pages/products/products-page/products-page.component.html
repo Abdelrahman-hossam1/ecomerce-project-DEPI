@@ -1,0 +1,22 @@
+<div class="d-flex flex-column justify-content-center align-items-center mt-5 title">
+  <div class="six">
+    <h1>Our Exclusive Product Collection<br>
+      <span>Explore a wide range of high-quality products tailored for you.</span>
+    </h1>
+  </div>
+</div>
+<div class="button-group mb-3 d-flex flex-column flex-sm-row justify-content-center align-items-center gap-4 mt-5">
+  <button (click)="showAllProducts()" class="button-57 rounded-3 text-nowrap" role="button"><a class="text-decoration-none text-dark" routerLink="/all-products"><span class="text  ">All</span><span>all</span></a></button>
+  <button (click)="showMenProducts()" class="button-57 rounded-3 text-nowrap" role="button"><a class="text-decoration-none text-dark" routerLink="/all-products"><span class="text  ">Men</span><span>Men</span></a></button>
+  <button (click)="showWomenProducts()" class="button-57 rounded-3 text-nowrap" role="button"><a class="text-decoration-none text-dark" routerLink="/all-products"><span class="text  ">Women</span><span>Women</span></a></button>
+  <button (click)="showKidsProducts()" class="button-57 rounded-3 text-nowrap" role="button"><a class="text-decoration-none text-dark" routerLink="/all-products"><span class="text  ">Kids</span><span>Kids</span></a></button>
+</div>
+
+<div class="container d-flex flex-column flex-sm-row">
+  <div class="row">
+    <div class="col-12 col-s-4 col-lg-3 m-auto" *ngFor="let product of products">
+      <app-card [product]="product"></app-card>
+    </div>
+  </div>
+</div>
+

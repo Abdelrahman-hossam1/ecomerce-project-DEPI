@@ -1,27 +1,27 @@
-<div class="container  page-wrapper">
+<div class="page-wrapper m-auto">
   <div class="page-inner">
     <div class="row">
       <div class="el-wrapper">
         <div class="box-up">
-          <img class="img img-fluid" src="assets/images/pink-suit.jpg" alt="">
+          <img class="img img-fluid" [src]="product?.imageUrl" alt="">
           <div class="img-info">
             <div class="info-inner">
-              <span class="p-name">I feel like Pablo</span>
-              <span class="p-company">Yeezy</span>
+              <span class="p-name">{{ product?.name }}</span>
+              <span class="p-company">{{ product?.company }}</span>
             </div>
-            <div class="a-size">Available sizes : <span class="size">S , M , L , XL</span></div>
+            <div class="a-size">Available sizes:
+              <span class="size">{{ product?.sizes?.join(', ') }}</span>
+            </div>
           </div>
         </div>
-
         <div class="box-down">
           <div class="h-bg">
             <div class="h-bg-inner"></div>
           </div>
-
           <a class="cart" href="#">
-            <span class="price">$120</span>
+            <span class="price">${{ product?.price }}</span>
             <span class="add-to-cart">
-              <span class="txt">Add in cart</span>
+              <span class="txt"><a href="" class="text-decoration-none text-light">Add to cart</a></span>
             </span>
           </a>
         </div>
@@ -29,3 +29,4 @@
     </div>
   </div>
 </div>
+
