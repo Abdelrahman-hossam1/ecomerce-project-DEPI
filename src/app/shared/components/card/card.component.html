@@ -1,26 +1,39 @@
+<<<<<<< HEAD
 <div class="container page-wrapper">
+=======
+<div class="page-wrapper m-auto">
+>>>>>>> 539d8a01d977a2153e403b44a6f1c3eead86bf51
   <div class="page-inner">
     <div class="row">
       <div class="el-wrapper">
         <div class="box-up">
+<<<<<<< HEAD
           <img class="img img-fluid" src="assets/images/pixel1.jpg" alt="">
+=======
+          <img class="img img-fluid" [src]="product?.imageUrl" alt="">
+>>>>>>> 539d8a01d977a2153e403b44a6f1c3eead86bf51
           <div class="img-info">
             <div class="info-inner">
-              <span class="p-name">I feel like Pablo</span>
-              <span class="p-company">Yeezy</span>
+              <span class="p-name">{{ product?.name }}</span>
+              <span class="p-company">{{ product?.company }}</span>
             </div>
-            <div class="a-size">Available sizes : <span class="size">S , M , L , XL</span></div>
+            <div class="a-size">Available sizes:
+              <span class="size">{{ product?.sizes?.join(', ') }}</span>
+            </div>
           </div>
         </div>
+<<<<<<< HEAD
         <div class="box-down" style="background-color: #ffffff;" >
+=======
+        <div class="box-down">
+>>>>>>> 539d8a01d977a2153e403b44a6f1c3eead86bf51
           <div class="h-bg">
             <div class="h-bg-inner"></div>
           </div>
-
           <a class="cart" href="#">
-            <span class="price">$120</span>
+            <span class="price">${{ product?.price }}</span>
             <span class="add-to-cart">
-              <span class="txt">Add in cart</span>
+              <span class="txt"><a href="" class="text-decoration-none text-light">Add to cart</a></span>
             </span>
           </a>
         </div>
@@ -28,3 +41,4 @@
     </div>
   </div>
 </div>
+
