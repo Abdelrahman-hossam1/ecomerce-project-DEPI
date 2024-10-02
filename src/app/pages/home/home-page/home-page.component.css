@@ -17,7 +17,7 @@
   text-wrap: nowrap;
   width: 0;
   white-space: nowrap;
-  animation: ss 1s alternate infinite ;
+  animation: ss 0.7s alternate infinite ;
 }
 @keyframes cursor {
   to{
