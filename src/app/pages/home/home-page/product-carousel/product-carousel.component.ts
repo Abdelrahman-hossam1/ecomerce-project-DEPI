@@ -24,7 +24,7 @@ export class ProductCarouselComponent {
 
   // Fetch all products from the API
   fetchProducts() {
-    this.http.get<any>('https://dummyjson.com/c/3d86-7e5a-443d-b6fc') // Replace with your actual API
+    this.http.get<any>('https://dummyjson.com/c/9443-9cc6-4763-8a9f') // Replace with your actual API
       .subscribe((data) => {
         console.log('Fetched data:', data); // Log the fetched data
         this.allProducts = data; // Assuming 'products' is the key in the API response
