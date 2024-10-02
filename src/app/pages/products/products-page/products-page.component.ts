@@ -1,7 +1,7 @@
 import { Component, OnInit  } from '@angular/core';
 import { CardComponent } from '../../../shared/components/card/card.component';
 import { HttpClient } from '@angular/common/http';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 
