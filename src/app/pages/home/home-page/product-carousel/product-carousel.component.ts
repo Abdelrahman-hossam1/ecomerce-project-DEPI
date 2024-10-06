@@ -2,7 +2,7 @@ import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CardComponent } from "../../../../shared/components/card/card.component";
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
+import { ProductService } from '../../../../services/product.service';
 
 @Component({
   selector: 'app-product-carousel',
@@ -16,21 +16,23 @@ export class ProductCarouselComponent {
   allProducts: any[] = []; // All products fetched from the API
   products: any[] = []; // Filtered products to be displayed in the cards
 
-  constructor(private http: HttpClient) {}
+  constructor(private productService: ProductService) {}
 
   ngOnInit(): void {
     this.fetchProducts();
   }
 
-  // Fetch all products from the API
+  // Fetch all products from the API via the service
   fetchProducts() {
-    this.http.get<any>('https://dummyjson.com/c/9443-9cc6-4763-8a9f') // Replace with your actual API
-      .subscribe((data) => {
+    this.productService.getAllProducts().subscribe(
+      (data) => {
         console.log('Fetched data:', data); // Log the fetched data
         this.allProducts = data; // Assuming 'products' is the key in the API response
         this.products = this.allProducts; // Initially display all products
-      }, error => {
+      },
+      (error) => {
         console.error('Error fetching products:', error);
-      });
+      }
+    );
   }
 }

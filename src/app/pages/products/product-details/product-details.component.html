@@ -1,0 +1,45 @@
+<div class="container mt-5" *ngIf="product">
+  <div class="row">
+    <div class="col-md-6 d-flex align-items-center justify-content-center">
+      <img [src]="product.imageUrl" class="img-fluid" alt="{{ product.name }}" width="500px">
+    </div>
+    <div class="col-md-6">
+      <h2>{{ product.name }}</h2>
+      <p class="m-4 ms-0"> Product type : {{product.category}}</p>
+      <h4 class="m-4 ms-0"><strong>Price: ${{ product.price }}</strong></h4>
+      <h5 class="m-4 ms-0">Available sizes : {{ product?.sizes?.join(', ') }} </h5>
+      <p class="m-4 ms-0">{{product.description}}</p>
+      <div class="d-flex gap-3 ">
+        <button class="button-57 rounded-3 text-nowrap" role="button"><a class="text-decoration-none text-dark" routerLink="/cart"><span class="text  ">Add to cart</span><span>Add to cart</span></a></button>
+        <button class="button-57 rounded-3 text-nowrap" role="button"><a class="text-decoration-none text-dark" [routerLink]="['/all-products']"><span class="text  ">Back to products</span><span>Back to products</span></a></button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <div class="container d-flex flex-column flex-sm-row">
+  <div class="row">
+    <div class="col-12 col-s-4 col-lg-3 m-auto" *ngFor="let product of products | slice:0:3">
+      <app-card [product]="product"></app-card>
+    </div>
+  </div>
+</div> -->
+<app-product-carousel></app-product-carousel>
+
+<div>
+  <ng-container *ngIf="product" style="width: 100%;">
+    <div *ngIf="product.category === 'men'">
+      <img class="img-fluid" src="assets/images/DEPI_bar-men.jpg" alt="Men's Category Image">
+    </div>
+    <div *ngIf="product.category === 'women'">
+      <img class="img-fluid" src="assets/images/DEPI_bar-women.jpg" alt="Women's Category Image">
+    </div>
+    <div *ngIf="product.category === 'kids'">
+      <img class="img-fluid" src="assets/images/DEPI_bar-kids.jpg" alt="Kids' Category Image">
+    </div>
+    <div *ngIf="product.category !== 'men' && product.category !== 'women' && product.category !== 'kids'">
+      <img src="" alt="Default Category Image">
+    </div>
+  </ng-container>
+</div>
+
+
