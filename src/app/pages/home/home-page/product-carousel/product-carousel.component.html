@@ -1,2 +1,17 @@
+<div class="container">
+  <swiper-container
+    class="mySwiper"
+    keyboard="true"
+    style="cursor: pointer;"
+    navigation="true"
+    slides-per-view="1"
+    space-between="0"
+   lazy="true"
+  >
 
-<app-card />
+    <swiper-slide *ngFor="let product of products">
+      <app-card [product]="product"></app-card>
+    </swiper-slide>
+  </swiper-container>
+</div>
+

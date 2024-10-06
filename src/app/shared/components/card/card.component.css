@@ -1,3 +1,7 @@
+a{
+  text-decoration: none;
+}
+
 .d-flex {
   display: -webkit-box;
   display: -ms-flexbox;

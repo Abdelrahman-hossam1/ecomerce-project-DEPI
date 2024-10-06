@@ -1,1 +1,46 @@
- 
+<div class="  " >
+  <nav class="navbar bg navbar-expand-sm  " style="background-color: rgb(123, 122, 123);"  >
+    <div class="container  ">
+      <a class="navbar-brand" routerLink="/">
+        <img src="assets/images/logo1.png" alt="Logo" width="40" height="40" class=" d-inline-block align-text-center rounded-3">
+        <span class="fw-bolder text-uppercase ms-1 ">Suit ur self</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link button-86" routerLink="/">HOME</a>
+
+          </li>
+          <li class="nav-item">
+            <a class="nav-link button-86" routerLink="/all-products">PRODUCTS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link button-86"routerLink="/all-products">ABOUT US</a>
+          </li>
+        </ul>
+        <ul class="mb-2   mb-lg-0 list-unstyled">
+          <li class="nav-item">
+            <a class="nav-link button-86" routerLink="/#"> <span>Cart</span><img height="50" width="50" class="img-fluid" src="assets/images/cart1.svg" alt=""> </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+
+
+<style>
+  /* Normal view styling */
+  .nav-link {
+    margin: 1rem 0; /* Normal spacing for desktop view */
+    text-align: center;
+  }
+
+  /* Reduced spacing for collapsed view */
+  .navbar-collapse.show .nav-link {
+    margin: 0.25rem 0; /* Reduced spacing for mobile view */
+  }
+</style>

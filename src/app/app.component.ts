@@ -9,7 +9,7 @@ import { ScrollBackUpComponent } from "./shared/components/scroll-back-up/scroll
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NavbarComponent, FooterComponent, LoaderComponent, ScrollBackUpComponent],
+  imports: [RouterOutlet, NavbarComponent, FooterComponent, LoaderComponent, ScrollBackUpComponent  ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
