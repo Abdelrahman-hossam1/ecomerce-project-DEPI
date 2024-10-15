@@ -8,6 +8,7 @@
       <p class="m-4 ms-0"> Product type : {{product.category}}</p>
       <h4 class="m-4 ms-0"><strong>Price: ${{ product.price }}</strong></h4>
       <h5 class="m-4 ms-0">Available sizes : {{ product?.sizes?.join(', ') }} </h5>
+      <a data-bs-toggle="modal" data-bs-target="#exampleModal"><h6 class="sizechart"> Size-Chart</h6></a>
       <p class="m-4 ms-0">{{product.description}}</p>
       <div class="d-flex gap-3 ">
         <button class="button-57 rounded-3 text-nowrap" role="button"><a class="text-decoration-none text-dark" routerLink="/cart"><span class="text  ">Add to cart</span><span>Add to cart</span></a></button>
@@ -42,4 +43,23 @@
   </ng-container>
 </div>
 
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 style="font-family: 'Open Sans'; " class=" animated-text fw-bold modal-title fs-3 " id="exampleModalLabel">Size Chart</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="container img-wrapper img-fluid">
+        <img src="assets/images/sizeChart.png" class="w-100 h-100"  alt="">
+      </div>
+      </div>
+      <div class="modal-footer">
+        <!-- <button type="" class="btn button-57 " data-bs-dismiss="modal">Close</button> -->
+        <button class="button-57 rounded-3 text-nowrap" data-bs-dismiss="modal"  role="button"><a class="text-decoration-none text-dark"><span class="text  ">Close</span><span>Close</span></a></button>
+      </div>
+    </div>
+  </div>
+</div>
 

@@ -62,4 +62,15 @@
   transition: all 900ms cubic-bezier(0.48, 0, 0.12, 1);
 }
 
+.sizechart{
+  color: brown;
+  text-decoration: underline;
+}
+
+.sizechart:hover{
+  cursor: pointer;
+  color: black;
+  transition: 1s;
+  transform:scale(1.01);
+}
 
