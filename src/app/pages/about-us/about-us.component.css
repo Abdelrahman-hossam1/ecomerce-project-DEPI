@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+QLD+Beginner:wght@400..700&display=swap');
+.animated-text {
+  font-family: fantasy;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 5px; /* Space between the text and the line */
+}
+.text-wrapper{
+  font-family: 'Open Sans';
+  padding: 1rem 5rem;
+  color: rgba(0, 0, 0, 0.856);
+  text-align: center;
+  font-size: 1.4rem;
+  font-style: italic;
+  font-weight: 700;
+  line-height: 2rem;
+}
+.animated-text{
+  font-size: 34px;
+  font-weight: 600;
+}
+.animated-text span{
+  position: relative;
+  display: inline-block;
+  overflow-x: hidden;
+  text-wrap: nowrap;
+  width: 0;
+  white-space: nowrap;
+  animation: ss 0.5s alternate infinite ;
+}
+@keyframes cursor {
+  to{
+      border-left: 2px solid #ff7f5000;
+  }
+}
+
+@keyframes ss {
+0%{
+    width: 0;
+}
+100%{
+    width: 125px;
+    white-space: nowrap;
+
+}
+
+}
