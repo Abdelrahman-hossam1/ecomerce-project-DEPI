@@ -1,0 +1,43 @@
+.cartBox{
+  border: 1px solid white;
+  border-radius:5px ;
+  padding: 0 20px;
+  margin: 50px;
+}
+.cartBox {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #f2f2f2;
+}
+
+.quantity button {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quantity input {
+  width: 60px;
+  text-align: center;
+}
+
+thead th {
+  background-color: #343a40;
+  color: #fff;
+}
+
+thead th, tbody td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+img {
+  border-radius: 5px;
+}

@@ -1,4 +1,4 @@
-import { Component , Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output  } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 
 @Component({
@@ -6,21 +6,30 @@ import { Router, RouterLink } from '@angular/router';
   standalone: true,
   imports: [RouterLink],
   templateUrl: './card.component.html',
-  styleUrl: './card.component.css'
+  styleUrls: ['./card.component.css']
 })
-export class CardComponent {
+export class CardComponent implements OnInit {
   @Input() product: any;
+  @Output() item = new EventEmitter<{ item: any; quantity: number }>(); // Corrected EventEmitter type
 
-  ngOnInit() {
-    console.log('Product received:', this.product); // Debug statement
-  }
+  data: any; // Define data (you can initialize it or use product directly)
+  amount: number = 1; // Define and initialize amount (default set to 1)
+
   constructor(private router: Router) {}
 
+  ngOnInit() {
+    this.data = this.product; // Assuming product is assigned to data
+    console.log('Product received:', this.product);
+  }
+
   navigateAndReload() {
-    const newRoute = `/product-details/${this.product.id}`; // Specify your new route
+    const newRoute = `/product-details/${this.product.id}`;
     this.router.navigateByUrl(newRoute).then(() => {
-      // Reload the new route
       window.location.reload();
     });
+  }
+
+  add() {
+    this.item.emit({ item: this.data, quantity: this.amount }); // Emitting the product and quantity
   }
 }

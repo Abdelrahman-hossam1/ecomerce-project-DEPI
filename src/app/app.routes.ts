@@ -4,6 +4,7 @@ import { HomePageComponent } from './pages/home/home-page/home-page.component';
 import { ProductsPageComponent } from './pages/products/products-page/products-page.component';
 import { ProductDetailsComponent } from './pages/products/product-details/product-details.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
+import { CartComponent } from './pages/cart/cart.component';
 
 
 export const routes: Routes = [
@@ -22,6 +23,10 @@ export const routes: Routes = [
   {
     path: 'about-us',
     component: AboutUsComponent
+  },
+  {
+    path: 'app-cart',
+    component: CartComponent
   },
   {
     path: '**',

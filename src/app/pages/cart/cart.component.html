@@ -1,0 +1,54 @@
+<div class="container mt-5">
+  <div class="cartBox p-4 bg-light shadow rounded">
+    <div class="headCart mb-4">
+      <h1 class="text-danger">Shopping Cart</h1>
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="lead"> You have <strong class="text-dark fw-bolder">{{cartProducts.length}}</strong> items in the cart</div>
+        <span class="text-danger card-header bg-transparent border-0" (click)="clearCart()"  style="cursor: pointer;">Clear Shopping Cart</span>
+      </div>
+    </div>
+
+    <div class="table-responsive table-striped">
+      <table class="table table-striped m-auto table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th></th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of cartProducts; let index = index" >
+            <td><img src="{{item.item.imageUrl}}" height="10px" width="100px" alt="Product Image" class="img-fluid"></td>
+            <td>{{item.item.name}}</td>
+            <td>{{item.item.price}}</td>
+            <td>
+              <div class="quantity d-flex align-items-center">
+                <button (click)="addAmount(index)"  class="btn btn-outline-secondary btn-sm mx-1">+</button>
+                <input class="form-control w-50 text-center" type="number" (change)="detectChange()"  [(ngModel)]="item.quantity" min="1" value="1">
+                <button (click)="minusAmount(index)"  class="btn btn-outline-secondary btn-sm mx-1">-</button>
+              </div>
+            </td>
+            <td>{{item.item.price * item.quantity}}</td>
+            <td>
+              <button  (click)="deletProduct(index)" class="btn btn-danger btn-sm">Delete</button>
+            </td>
+          </tr>
+          <!-- Additional rows can go here -->
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="4"></td>
+            <td><strong>Total: {{total}}$</strong></td>
+            <td><button class="btn btn-success">Place Order</button></td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+
+
+</div>

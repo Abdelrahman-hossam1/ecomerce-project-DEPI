@@ -17,6 +17,7 @@ import { ProductService } from '../../../services/product.service';
 export class ProductsPageComponent implements OnInit {
   allProducts: any[] = []; // All products fetched from the API
   products: any[] = []; // Filtered products to be displayed in the cards
+  cartProducts:any[] = [];
 
   constructor(private productService: ProductService) {}
 
@@ -60,5 +61,32 @@ export class ProductsPageComponent implements OnInit {
   showAllProducts() {
     this.products = this.allProducts;
   }
-
+  addToCart(event:any){
+    if("cart" in localStorage ){
+      this.cartProducts = JSON.parse(localStorage.getItem("cart")!)
+      let exist = this.cartProducts.find(item => item.id == event.id)
+      if(true){
+        this.cartProducts.push(event)
+        localStorage.setItem("cart", JSON.stringify(this.cartProducts))
+      }
+    }else{
+      this.cartProducts.push(event)
+      localStorage.setItem("cart", JSON.stringify(this.cartProducts))
+    }
+  }
 }
+// addToCart(event:any){
+//   if("cart" in localStorage ){
+//     this.cartProducts = JSON.parse(localStorage.getItem("cart")!)
+//     let exist = this.cartProducts.find(item => item.id == event.id)
+//     if(exist){
+//       alert("product already exist in the cart")
+//     }else{
+//       this.cartProducts.push(event)
+//       localStorage.setItem("cart", JSON.stringify(this.cartProducts))
+//     }
+//   }else{
+//     this.cartProducts.push(event)
+//     localStorage.setItem("cart", JSON.stringify(this.cartProducts))
+//   }
+// }
