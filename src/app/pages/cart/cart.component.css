@@ -41,3 +41,125 @@ thead th, tbody td {
 img {
   border-radius: 5px;
 }
+
+/* -------------------------- clear cart animation -------------------------- */
+.sparkle {
+   /* max-width: 5em; */
+  color: #000000; /* $c-text */
+
+  font-size: 1em; /* Smaller font size */
+  padding: 0.5em 1em; /* Smaller padding */
+  font-weight: 500;
+  text-decoration: underline;
+}
+.sparkle:hover{
+  text-decoration: none;
+}
+
+.u-hover--sparkle {
+  box-sizing: border-box;
+  position: relative;
+  padding: 0.5em 0.75em; /* Reduce padding */
+}
+
+.u-hover--sparkle::before,
+.u-hover--sparkle::after {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  transform-origin: center;
+}
+
+.u-hover--sparkle::before {
+  border-top: 0.2em solid #f7b26a; /* Thinner border */
+  border-bottom: 0.2em solid #f7b26a;
+  transform: scale3d(0, 1, 1);
+}
+
+.u-hover--sparkle::after {
+  border-left: 0.1em solid #f7b26a;
+  border-right: 0.1em solid #f7b26a;
+  transform: scale3d(1, 0, 1);
+}
+
+.u-hover--sparkle:hover::before,
+.u-hover--sparkle:hover::after {
+  transform: scale3d(1, 1, 1);
+  transition: transform 600ms;
+}
+
+/* ------------------------------ end animation ----------------------------- */
+
+/* -------------------------------------------------------------------------- */
+/*                                animated head                               */
+/* -------------------------------------------------------------------------- */
+
+
+.animated-text {
+  font-family: fantasy;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 5px; /* Space between the text and the line */
+}
+
+.animated-text {
+  font-size: 34px;
+  font-weight: 600;
+}
+
+.animated-text span {
+  position: relative;
+  display: inline-block;
+  overflow-x: hidden;
+  text-wrap: nowrap;
+  width: 100;
+  white-space: nowrap;
+  animation:  0.8s  scaleUp 1s infinite ease-in-out;
+}
+
+/* Existing width animation */
+@keyframes ss {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 125px;
+    white-space: nowrap;
+  }
+}
+
+/* New scaling animation */
+@keyframes scaleUp {
+  0%, 100% {
+    transform: scale(1); /* Normal size */
+  }
+  50% {
+    transform: scale(1.2); /* Scaled up */
+  }
+}
+
+/* ----------------------------------- end ---------------------------------- */
+
+/* -------------------------------------------------------------------------- */
+/*                                 start alert                                */
+/* -------------------------------------------------------------------------- */
+
+.alert {
+  background-color: #4CAF50; /* Green */
+  color: white;
+  padding: 18px;
+  border: none;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 18px;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  opacity: 1;
+  transition: opacity 1s ease-out;
+}

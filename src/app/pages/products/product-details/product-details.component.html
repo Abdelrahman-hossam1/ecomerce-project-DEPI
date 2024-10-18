@@ -11,7 +11,7 @@
       <a data-bs-toggle="modal" data-bs-target="#exampleModal"><h6 class="sizechart"> Size-Chart</h6></a>
       <p class="m-4 ms-0">{{product.description}}</p>
       <div class="d-flex gap-3 ">
-        <button class="button-57 rounded-3 text-nowrap" role="button"><a class="text-decoration-none text-dark" routerLink="/cart"><span class="text  ">Add to cart</span><span>Add to cart</span></a></button>
+        <button class="button-57 rounded-3 text-nowrap" role="button"><a class="text-decoration-none text-dark" routerLink="/cart"><span class="text ">Add to cart</span><span>Add to cart</span></a></button>
         <button class="button-57 rounded-3 text-nowrap" role="button"><a class="text-decoration-none text-dark" [routerLink]="['/all-products']"><span class="text  ">Back to products</span><span>Back to products</span></a></button>
       </div>
     </div>
@@ -20,7 +20,7 @@
 <div class="container d-flex flex-column flex-sm-row">
   <div class="row">
     <div class="col-12 col-s-4 col-lg-3 m-auto" *ngFor="let product of products | slice:4:8">
-      <app-card [product]="product"></app-card>
+      <app-card (item)="addToCart($event)" [product]="product"></app-card>
     </div>
   </div>
 </div>

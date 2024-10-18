@@ -13,8 +13,9 @@ import { ProductService } from '../../../../services/product.service';
   styleUrl: './product-carousel.component.css'
 })
 export class ProductCarouselComponent {
-  allProducts: any[] = []; // All products fetched from the API
-  products: any[] = []; // Filtered products to be displayed in the cards
+  allProducts: any[] = [];
+  products: any[] = [];
+  cartProducts:any[] = [];
 
   constructor(private productService: ProductService) {}
 
@@ -34,5 +35,18 @@ export class ProductCarouselComponent {
         console.error('Error fetching products:', error);
       }
     );
+  }
+  addToCart(event:any){
+    if("cart" in localStorage ){
+      this.cartProducts = JSON.parse(localStorage.getItem("cart")!)
+      let exist = this.cartProducts.find(item => item.id == event.id)
+      if(true){
+        this.cartProducts.push(event)
+        localStorage.setItem("cart", JSON.stringify(this.cartProducts))
+      }
+    }else{
+      this.cartProducts.push(event)
+      localStorage.setItem("cart", JSON.stringify(this.cartProducts))
+    }
   }
 }

@@ -17,6 +17,7 @@ import { ProductCarouselComponent } from "../../home/home-page/product-carousel/
 export class ProductDetailsComponent implements OnInit {
   product: any; // To hold the fetched product details
   products:any;
+  cartProducts:any[] = [];
   constructor(
     private route: ActivatedRoute,
     private productService: ProductService
@@ -48,5 +49,19 @@ export class ProductDetailsComponent implements OnInit {
         console.error('Error fetching products:', error);
       }
     );
+  }
+  /* ----------------------------- hossam bygarrab ---------------------------- */
+  addToCart(event:any){
+    if("cart" in localStorage ){
+      this.cartProducts = JSON.parse(localStorage.getItem("cart")!)
+      let exist = this.cartProducts.find(item => item.id == event.id)
+      if(true){
+        this.cartProducts.push(event)
+        localStorage.setItem("cart", JSON.stringify(this.cartProducts))
+      }
+    }else{
+      this.cartProducts.push(event)
+      localStorage.setItem("cart", JSON.stringify(this.cartProducts))
+    }
   }
 }

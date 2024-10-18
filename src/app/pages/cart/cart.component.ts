@@ -14,6 +14,7 @@ export class CartComponent {
   constructor() {}
   cartProducts: any[] = [];
   total:any = 0
+  showAlert: boolean = false;
 
   ngOnInit(): void {
     this.getCartProducts();
@@ -56,4 +57,15 @@ export class CartComponent {
       this.total += this.cartProducts[x].item.price * this.cartProducts[x].quantity;
     }
   }
+  alertNow(){
+
+        this.showAlert = true;
+        setTimeout(() => {
+          this.showAlert = false;
+        }, 4000);
+        this.cartProducts = []
+        this.getCartTotal()
+        localStorage.setItem("cart", JSON.stringify(this.cartProducts))
+  }
+
 }
