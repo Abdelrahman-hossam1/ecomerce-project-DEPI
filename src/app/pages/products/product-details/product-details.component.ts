@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output  } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductService } from '../../../services/product.service';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { CardComponent } from '../../../shared/components/card/card.component';
 import { ProductCarouselComponent } from "../../home/home-page/product-carousel/product-carousel.component";
+import { CartService } from '../../../services/cart.service';
+
 
 @Component({
   selector: 'app-product-details',
@@ -20,8 +22,14 @@ export class ProductDetailsComponent implements OnInit {
   cartProducts:any[] = [];
   constructor(
     private route: ActivatedRoute,
-    private productService: ProductService
+    private productService: ProductService,
+    private cartService :CartService
   ) {}
+  @Output() item = new EventEmitter<{ item: any; quantity: number }>();
+
+  data: any;
+  amount: number = 1;
+  showAlert: boolean = false; // For controlling the alert display
 
   ngOnInit(): void {
     // Get the product ID from the route
@@ -50,6 +58,9 @@ export class ProductDetailsComponent implements OnInit {
       }
     );
   }
+  add(product: any) {
+    this.cartService.addToCart(product);
+  }
   /* ----------------------------- hossam bygarrab ---------------------------- */
   addToCart(event:any){
     if("cart" in localStorage ){
@@ -64,4 +75,5 @@ export class ProductDetailsComponent implements OnInit {
       localStorage.setItem("cart", JSON.stringify(this.cartProducts))
     }
   }
+
 }

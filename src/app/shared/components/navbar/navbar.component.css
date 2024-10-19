@@ -1,4 +1,4 @@
- 
+
 .button-86 {
   all: unset;
   width: 80px;  /* Decreased width */
@@ -68,4 +68,20 @@
 
 li{
   padding: 5%;
+}
+
+.alert {
+  background-color: #4CAF50; /* Green */
+  color: white;
+  padding: 15px;
+  border: none;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 16px;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  opacity: 1;
+  transition: opacity 1s ease-out;
 }
