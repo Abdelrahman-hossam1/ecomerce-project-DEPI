@@ -1,0 +1,208 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  /* background: linear-gradient(to bottom, #111, #222); */
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.blurred-background {
+  position: fixed; /* Position it fixed to cover the entire viewport */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  backdrop-filter: blur(50px); /* Blur effect */
+  z-index: -1; /* Send it behind other elements */
+}
+
+
+.custom-gradient {
+  background: linear-gradient(to bottom, #111, #222);
+}
+
+.card {
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  padding: 40px 30px;
+  max-width: 400px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: slideIn 0.8s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.7);
+}
+
+@keyframes slideIn {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #f0f0f0;
+  margin-bottom: 20px;
+  animation: textFadeIn 0.5s ease-in-out;
+}
+
+@keyframes textFadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: 500;
+  color: #eee;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #555;
+  border-radius: 5px;
+  box-sizing: border-box;
+  background-color: #444;
+  color: #eee;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  animation: inputScale 0.5s ease-in-out;
+}
+
+@keyframes inputScale {
+  from {
+      transform: scale(0.9);
+      opacity: 0;
+  }
+  to {
+      transform: scale(1);
+      opacity: 1;
+  }
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(41, 128, 185, 0.5);
+  outline: none;
+}
+
+button {
+  transition: background-color 0.3s, transform 0.2s;
+  animation: buttonPulse 1.2s infinite;
+}
+
+@keyframes buttonPulse {
+  50% {
+      transform: scale(1.05);
+  }
+}
+
+button:hover {
+  background-color: #0062cc;
+  transform: translateY(-2px);
+}
+
+.social-links {
+  margin-top: 20px;
+}
+
+.social-links img {
+  width: 60px;
+  display: inline-block;
+  margin: 0 5px;
+  padding: 10px;
+  border-radius: 50%;
+  color: #fff;
+  text-decoration: none;
+  transition: background-color 0.3s, transform 0.2s;
+  animation: iconFadeIn 0.6s ease-in-out;
+}
+
+@keyframes iconFadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+.social-links img:hover {
+  opacity: 0.9;
+  transform: scale(1.1);
+}
+
+.sign-in,
+.sign-up {
+  text-align: center;
+}
+
+.sign-in p,
+.sign-up p {
+  margin-top: 15px;
+}
+
+.sign-in a,
+.sign-up a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.sign-in a:hover,
+.sign-up a:hover {
+  color: #0062cc;
+}
+
+.animated-text {
+  animation: typing 3s steps(40) forwards, blink 1s infinite;
+}
+
+@keyframes typing {
+  from {
+      width: 0;
+  }
+  to {
+      width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+      opacity: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+      padding: 20px;
+  }
+
+}

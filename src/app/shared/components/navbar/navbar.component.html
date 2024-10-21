@@ -25,7 +25,10 @@
           <li class="nav-item">
             <a class="nav-link button-86" routerLink="/app-cart"> <span>Cart</span><img height="50" width="50" class="img-fluid" src="assets/images/cart1.svg" alt=""> </a>
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalSign">
+            <button type="button" class="btn btn-primary"
+            [routerLink]="['/sign-up']"
+            >
+            <!-- data-bs-toggle="modal" data-bs-target="#exampleModalSign"  -->
               SignUp
             </button>
           </li>

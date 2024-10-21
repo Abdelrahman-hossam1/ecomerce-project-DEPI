@@ -2,6 +2,7 @@ import { Component,OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common'; // Import CommonModule if using directives like ngClass
 import { RouterLink } from '@angular/router';
 import { FormGroup, FormBuilder, Validators,ReactiveFormsModule,FormControl, FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -26,6 +27,10 @@ export class NavbarComponent {
       password : new FormControl("",[Validators.required, Validators.minLength(6)])
     })
   }
+
+
+
+
 
   submitApp(){
     const isFormValid = this.userForm.valid;
