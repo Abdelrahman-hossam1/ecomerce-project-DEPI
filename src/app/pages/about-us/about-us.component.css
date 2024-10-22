@@ -7,18 +7,65 @@
 }
 .text-wrapper{
   font-family: 'Open Sans';
-  padding: 1rem 5rem;
+  /* padding: 1rem 5rem; */
   color: rgba(0, 0, 0, 0.856);
   text-align: center;
-  font-size: 1.4rem;
+  font-size: 1rem;
   font-style: italic;
   font-weight: 700;
-  line-height: 2rem;
+  /* line-height: 0.7rem; */
 }
 .animated-text{
   font-size: 34px;
   font-weight: 600;
 }
+/* ---------------------------------- test ---------------------------------- */
+
+.text-wrapper{
+  position: initial;
+  /* z-index: 10; */
+  /* padding: 5rem 8rem; */
+  color: rgba(0, 0, 0, 0.856);
+  text-align: center;
+  font-size: 1.3rem;
+  font-style: italic;
+  font-weight: 700;
+  line-height: 2.5rem;
+}
+@media(max-width:767px){
+  .text-wrapper{
+      position: initial;
+      z-index: 10;
+      /* padding: 3rem 2rem; */
+      color: rgba(78, 77, 77, 0.856);
+      font-weight: 700;
+      text-align: center;
+      font-size: 0.7rem;
+      font-style: italic;
+      font-weight: bold;
+      line-height: 1.5rem;
+  }
+}
+.text-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.text-wrapper::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  /* margin: auto; */
+  bottom: 0;
+  width: 100%;
+  height: 2px; /* Line thickness */
+  background-color: #f7b26a; /* Line color */
+  /* transform: scaleX(3); The underline is always fully visible */
+  /* transform-origin: bottom left; */
+  transition: transform 0.3s ease-out;
+}
+
+/* ---------------------------------- test ---------------------------------- */
 .animated-text span{
   position: relative;
   display: inline-block;
