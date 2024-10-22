@@ -1,5 +1,5 @@
 <div class="  " >
-  <nav class="navbar  bg navbar-expand-sm  " style="background-color: rgb(123, 122, 123);"  >
+  <nav class="navbar  bg navbar-expand-lg  " style="background-color: rgb(123, 122, 123);"  >
     <div class="container ">
       <a class="navbar-brand" routerLink="/">
         <img src="assets/images/logo1.png" alt="Logo" width="40" height="40" class=" d-inline-block align-text-center rounded-3">
@@ -22,12 +22,14 @@
           </li>
         </ul>
         <ul class="d-flex mb-2   mb-lg-0 list-unstyled">
-          <li class="nav-item">
-            <a class="nav-link button-86" routerLink="/app-cart"> <span>Cart</span><img height="50" width="50" class="img-fluid" src="assets/images/cart1.svg" alt=""> </a>
+          <li class="nav-item d-flex gap-5">
+            <div>
+              <a class="nav-link button-86" routerLink="/app-cart"> <span>Cart</span><img height="50" width="50" class="img-fluid" src="assets/images/cart1.svg" alt=""> </a>
+            </div>
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalSign">
-              SignUp
-            </button>
+            <div>
+              <a class="nav-link button-86"data-bs-toggle="modal" data-bs-target="#exampleModalSign" > <span>SignUp</span></a>
+            </div>
           </li>
         </ul>
       </div>

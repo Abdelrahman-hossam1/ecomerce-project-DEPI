@@ -32,9 +32,11 @@ export class CartComponent {
     localStorage.setItem("cart", JSON.stringify(this.cartProducts))
   }
   minusAmount(index:number){
-    this.cartProducts[index].quantity--
-    this.getCartTotal()
-    localStorage.setItem("cart", JSON.stringify(this.cartProducts))
+    if(this.cartProducts[index].quantity > 0){
+      this.cartProducts[index].quantity--
+      this.getCartTotal()
+      localStorage.setItem("cart", JSON.stringify(this.cartProducts))
+    }
   }
   detectChange(){
     this.getCartTotal()

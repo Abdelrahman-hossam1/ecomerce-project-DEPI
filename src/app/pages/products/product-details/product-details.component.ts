@@ -60,6 +60,7 @@ export class ProductDetailsComponent implements OnInit {
   }
   add(product: any) {
     this.cartService.addToCart(product);
+    this.item.emit({ item: this.data, quantity: this.amount });
   }
   /* ----------------------------- hossam bygarrab ---------------------------- */
   addToCart(event:any){
