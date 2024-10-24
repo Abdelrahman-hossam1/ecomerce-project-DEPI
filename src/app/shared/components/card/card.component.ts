@@ -5,9 +5,9 @@ import { Router, RouterLink } from '@angular/router';
 @Component({
   selector: 'app-card',
   standalone: true,
-  imports: [RouterLink , CommonModule],
+  imports: [RouterLink, CommonModule],
   templateUrl: './card.component.html',
-  styleUrls: ['./card.component.css']
+  styleUrls: ['./card.component.css'],
 })
 export class CardComponent implements OnInit {
   @Input() product: any;
@@ -27,7 +27,7 @@ export class CardComponent implements OnInit {
   navigateAndReload() {
     const newRoute = `/product-details/${this.product.id}`;
     this.router.navigateByUrl(newRoute).then(() => {
-      window.location.reload();
+      // window.location.reload();
     });
   }
 

@@ -1,29 +1,27 @@
-import { Component, EventEmitter, OnInit, Output  } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductService } from '../../../services/product.service';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { CardComponent } from '../../../shared/components/card/card.component';
-import { ProductCarouselComponent } from "../../home/home-page/product-carousel/product-carousel.component";
+import { ProductCarouselComponent } from '../../home/home-page/product-carousel/product-carousel.component';
 import { CartService } from '../../../services/cart.service';
-
 
 @Component({
   selector: 'app-product-details',
   standalone: true,
   imports: [CardComponent, RouterLink, CommonModule, ProductCarouselComponent],
   templateUrl: './product-details.component.html',
-  styleUrl: './product-details.component.css'
+  styleUrl: './product-details.component.css',
 })
-
 export class ProductDetailsComponent implements OnInit {
   product: any; // To hold the fetched product details
-  products:any;
-  cartProducts:any[] = [];
+  products: any;
+  cartProducts: any[] = [];
   constructor(
     private route: ActivatedRoute,
     private productService: ProductService,
-    private cartService :CartService
+    private cartService: CartService
   ) {}
   @Output() item = new EventEmitter<{ item: any; quantity: number }>();
 
@@ -59,22 +57,28 @@ export class ProductDetailsComponent implements OnInit {
     );
   }
   add(product: any) {
+    const cart = JSON.parse(localStorage.getItem('cart') || '');
+    if (cart.length) {
+      const addedItem = { item: product, quantity: 1 };
+      cart.push(addedItem);
+      localStorage.setItem('cart', JSON.stringify(cart));
+    }
+
     this.cartService.addToCart(product);
     this.item.emit({ item: this.data, quantity: this.amount });
   }
   /* ----------------------------- hossam bygarrab ---------------------------- */
-  addToCart(event:any){
-    if("cart" in localStorage ){
-      this.cartProducts = JSON.parse(localStorage.getItem("cart")!)
-      let exist = this.cartProducts.find(item => item.id == event.id)
-      if(true){
-        this.cartProducts.push(event)
-        localStorage.setItem("cart", JSON.stringify(this.cartProducts))
+  addToCart(event: any) {
+    if ('cart' in localStorage) {
+      this.cartProducts = JSON.parse(localStorage.getItem('cart')!);
+      let exist = this.cartProducts.find((item) => item.id == event.id);
+      if (true) {
+        this.cartProducts.push(event);
+        localStorage.setItem('cart', JSON.stringify(this.cartProducts));
       }
-    }else{
-      this.cartProducts.push(event)
-      localStorage.setItem("cart", JSON.stringify(this.cartProducts))
+    } else {
+      this.cartProducts.push(event);
+      localStorage.setItem('cart', JSON.stringify(this.cartProducts));
     }
   }
-
 }
