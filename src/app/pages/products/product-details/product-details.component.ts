@@ -66,6 +66,13 @@ export class ProductDetailsComponent implements OnInit {
 
     this.cartService.addToCart(product);
     this.item.emit({ item: this.data, quantity: this.amount });
+        // Show the success alert
+        this.showAlert = true;
+
+        // Hide the alert after 3 seconds
+        setTimeout(() => {
+          this.showAlert = false;
+        }, 1000);
   }
   /* ----------------------------- hossam bygarrab ---------------------------- */
   addToCart(event: any) {
