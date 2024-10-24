@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Edu+QLD+Beginner:wght@400..700&display=swap');
 .animated-text {
-  font-family: fantasy;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   position: relative;
   display: inline-block;
   padding-bottom: 5px; /* Space between the text and the line */
@@ -36,11 +36,4 @@
 }
 
 }
-@keyframes scaleUp {
-  0%, 100% {
-    transform: scale(1); /* Normal size */
-  }
-  50% {
-    transform: scale(1.2); /* Scaled up */
-  }
-}
+ 

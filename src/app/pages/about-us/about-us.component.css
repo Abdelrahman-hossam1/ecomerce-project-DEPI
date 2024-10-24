@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Edu+QLD+Beginner:wght@400..700&display=swap');
 .animated-text {
-  font-family: fantasy;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   position: relative;
   display: inline-block;
   padding-bottom: 5px; /* Space between the text and the line */
 }
 .text-wrapper{
-  font-family: 'Open Sans';
+  font-family:'Times New Roman', Times, serif;
   /* padding: 1rem 5rem; */
   color: rgba(0, 0, 0, 0.856);
   text-align: center;

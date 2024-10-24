@@ -81,9 +81,9 @@ i{
 /* -------------------------------------------------------------------------- */
 /*                                animated text                               */
 /* -------------------------------------------------------------------------- */
- 
+
 .animated-text {
-  font-family: fantasy;
+  font-family: 'Times New Roman', Times, serif;
   position: relative;
   display: inline-block;
   padding-bottom: 5px; /* Space between the text and the line */
