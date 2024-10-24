@@ -1,0 +1,10 @@
+ [build]
+  # Directory where the Angular build output will be placed
+  publish = "dist/ecommerce-project"
+  # Command to build the Angular project
+  command = "ng build --prod"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
