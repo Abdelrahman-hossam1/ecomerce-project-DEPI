@@ -7,7 +7,7 @@ body{
   background: linear-gradient(112deg, #ffffff 50%, #959595 50%);
   /* max-width: 900px; */
   margin: auto;
-} 
+}
 
 .carousel-caption {
   position: initial;
@@ -81,8 +81,7 @@ i{
 /* -------------------------------------------------------------------------- */
 /*                                animated text                               */
 /* -------------------------------------------------------------------------- */
-@import url('https://fonts.googleapis.com/css2?family=Edu+QLD+Beginner:wght@400..700&display=swap');
-
+ 
 .animated-text {
   font-family: fantasy;
   position: relative;
