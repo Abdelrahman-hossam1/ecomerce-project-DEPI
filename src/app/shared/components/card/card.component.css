@@ -173,7 +173,9 @@ body {
 .info-inner .p-name {
   font-family: 'PT Sans', sans-serif;
   font-size: 18px;
-  color: #252525;
+  /* color: #252525; */
+  color:rgb(255, 255, 255);
+  font-weight: 900;
 }
 
 .info-inner .p-company {
@@ -300,4 +302,4 @@ body {
   transition: opacity 1s ease-out;
 }
 
- 
+
