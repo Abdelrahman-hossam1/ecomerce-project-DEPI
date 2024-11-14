@@ -6,11 +6,13 @@ import { CommonModule } from '@angular/common';
 import { CardComponent } from '../../../shared/components/card/card.component';
 import { ProductCarouselComponent } from '../../home/home-page/product-carousel/product-carousel.component';
 import { CartService } from '../../../services/cart.service';
+import { AboutUsCarousselComponent } from "../../about-us/about-us-caroussel/about-us-caroussel.component";
+import { ReviewsCarouselComponent } from "../reviews-carousel/reviews-carousel.component";
 
 @Component({
   selector: 'app-product-details',
   standalone: true,
-  imports: [CardComponent, RouterLink, CommonModule, ProductCarouselComponent],
+  imports: [CardComponent, RouterLink, CommonModule, ProductCarouselComponent, AboutUsCarousselComponent, ReviewsCarouselComponent],
   templateUrl: './product-details.component.html',
   styleUrl: './product-details.component.css',
 })

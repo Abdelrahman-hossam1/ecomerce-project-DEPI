@@ -1,7 +1,7 @@
 <div class="container mt-5" *ngIf="product">
   <div class="row">
-    <div class="col-md-6 d-flex align-items-center justify-content-center">
-      <img [src]="product.imageUrl" class="img-fluid" alt="{{ product.name }}" width="500px">
+    <div class="col-md-6 d-flex  justify-content-center" style="height:80%" >
+      <img [src]="product.imageUrl" class="img-fluid" alt="{{ product.name }}"   width="500px">
     </div>
     <div class="col-md-6">
       <h2>{{ product.name }}</h2>
@@ -13,6 +13,10 @@
       <div class="d-flex gap-3 ">
         <button class="button-57 rounded-3 text-nowrap" role="button" (click)="add(product)"><a class="text-decoration-none text-dark"><span class="text ">Add to cart</span><span>Add to cart</span></a></button>
         <button class="button-57 rounded-3 text-nowrap" role="button"><a class="text-decoration-none text-dark" [routerLink]="['/all-products']"><span class="text  ">Back to products</span><span>Back to products</span></a></button>
+      </div>
+      <!-- ---------------------------- reviews hena ----------------------------- -->
+      <div class="caroussel-review">
+       
       </div>
     </div>
   </div>
